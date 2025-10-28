@@ -6,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>TechLearn - Vue.js Learning Platform</title>
+    <title>Teachers Academy - Vue.js Demo</title>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <h1>TechLearn</h1>
-            <h2>Interactive Technology Learning Platform</h2>
+            <h1>Teachers Academy</h1>
+            <h2>Meet Our Expert Instructors</h2>
         </header>
         
         <nav class="main-nav">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#learning">Learning</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Teachers</a></li>
+                <li><a href="#">Courses</a></li>
             </ul>
         </nav>
 
@@ -56,39 +56,39 @@
 
             <div class="info-section">
                 <p class="instruction">
-                    💡 <strong>Tip:</strong> Click on the card to toggle between title and description!
+                    💡 <strong>Tip:</strong> Click on the card to toggle between teacher name and bio!
                 </p>
             </div>
         </main>
 
-        <!-- Sidebar with Vue.js Features -->
+        <!-- Sidebar -->
         <aside class="main-sidebar">
-            <h3>Why Vue.js?</h3>
+            <h3>Why Learn With Us?</h3>
             <dl>
-                <dt>📚 Approachable:</dt>
-                <dd>Builds on top of standard HTML, CSS and JavaScript with intuitive API and world-class documentation.</dd>
+                <dt>📚 Expert Teachers:</dt>
+                <dd>Learn from experienced instructors with real-world industry knowledge and teaching expertise.</dd>
 
-                <dt>⚡ Performant:</dt>
-                <dd>Truly reactive, compiler-optimized rendering system that rarely requires manual optimization.</dd>
+                <dt>⚡ Interactive Learning:</dt>
+                <dd>Engage with hands-on projects and practical exercises designed by our expert teachers.</dd>
 
-                <dt>🚀 Versatile:</dt>
-                <dd>A rich, incrementally adoptable ecosystem that scales between a library and a full-featured framework.</dd>
+                <dt>🚀 Career Ready:</dt>
+                <dd>Get the skills and knowledge you need to succeed in the tech industry.</dd>
             </dl>
 
             <div class="features-list">
-                <h4>Learning Features:</h4>
+                <h4>Features:</h4>
                 <ul>
-                    <li>✓ Interactive card flipping</li>
-                    <li>✓ Dynamic content loading</li>
-                    <li>✓ Reactive data binding</li>
-                    <li>✓ Event handling</li>
+                    <li>✓ Interactive teacher profiles</li>
+                    <li>✓ Dynamic content display</li>
+                    <li>✓ Easy navigation</li>
                     <li>✓ Responsive design</li>
+                    <li>✓ Modern interface</li>
                 </ul>
             </div>
         </aside>
 
         <footer>
-            &copy; <span id="year"></span> TechLearn - Vue.js Interactive Learning Platform
+            &copy; <span id="year"></span> Teachers Academy - Vue.js Demo
         </footer>
     </div>
 
@@ -107,7 +107,7 @@
         const techLearningApp = {
             data() {
                 return {
-                    mainHeading: 'Explore Technology Topics',
+                    mainHeading: 'Our Expert Teachers',
                     // Using data from data.js file
                     techTopics,
                     // Track if card is flipped
@@ -129,18 +129,6 @@
                         this.isFlipped = false;
                     }
                 }
-            },
-            mounted() {
-                // Add keyboard navigation
-                window.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowLeft') {
-                        this.move(-1);
-                    } else if (e.key === 'ArrowRight') {
-                        this.move(1);
-                    } else if (e.key === ' ' || e.key === 'Enter') {
-                        this.isFlipped = !this.isFlipped;
-                    }
-                });
             }
         };
 
@@ -150,7 +138,6 @@
 </body>
 
 </html>
-            <!-- Indicators -->
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
