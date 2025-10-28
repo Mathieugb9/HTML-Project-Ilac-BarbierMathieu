@@ -6,90 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Teachers Academy - Vue.js Demo</title>
+    <title>Vue.js Demo</title>
 </head>
 
 <body>
     <div class="wrapper">
         <header>
-            <h1>Teachers Academy</h1>
-            <h2>Meet Our Expert Instructors</h2>
+            <h1>Vue.js Framework</h1>
+            <h2>Vue Demo Application</h2>
         </header>
         
         <nav class="main-nav">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Teachers</a></li>
-                <li><a href="#">Courses</a></li>
+                <li><a href="#">Page 1</a></li>
+                <li><a href="#">Page 2</a></li>
+                <li><a href="#">Page 3</a></li>
             </ul>
         </nav>
 
-        <!-- Vue.js App Section -->
+        <!-- Vue.js App -->
         <main id="app" class="main-content">
             <h1 v-text="mainHeading"></h1>
             
-            <!-- Interactive Card Section -->
+            <!-- Card Section -->
             <section @click="isFlipped = !isFlipped" class="card">
                 <div class="card-content">
                     <div class="card-image">
-                        <img :src="techTopics[index].image" :alt="techTopics[index].title">
+                        <img :src="packages[index].image" :alt="packages[index].title">
                     </div>
                     <div class="card-text">
-                        <h2 v-text="isFlipped ? '' : techTopics[index].title"></h2>
-                        <p v-text="isFlipped ? techTopics[index].description : ''"></p>
+                        <h2 v-text="isFlipped ? '' : packages[index].title"></h2>
+                        <p v-text="isFlipped ? packages[index].description : ''"></p>
                     </div>
                 </div>
             </section>
 
             <!-- Navigation Buttons -->
             <div class="buttons">
-                <button @click.stop="move(-1)" type="button" class="btn-prev">
-                    <span>←</span> Previous
-                </button>
-                <div class="counter">
-                    <span>{{ index + 1 }} / {{ techTopics.length }}</span>
-                </div>
-                <button @click.stop="move(1)" type="button" class="btn-next">
-                    Next <span>→</span>
-                </button>
-            </div>
-
-            <div class="info-section">
-                <p class="instruction">
-                    💡 <strong>Tip:</strong> Click on the card to toggle between teacher name and bio!
-                </p>
+                <button @click.stop="move(-1)" type="button">Previous</button>
+                <button @click.stop="move(1)" type="button">Next</button>
             </div>
         </main>
 
         <!-- Sidebar -->
         <aside class="main-sidebar">
-            <h3>Why Learn With Us?</h3>
             <dl>
-                <dt>📚 Expert Teachers:</dt>
-                <dd>Learn from experienced instructors with real-world industry knowledge and teaching expertise.</dd>
+                <dt>Approachable:</dt>
+                <dd>Builds on top of standard HTML, CSS and JavaScript with intuitive API and world-class documentation.</dd>
 
-                <dt>⚡ Interactive Learning:</dt>
-                <dd>Engage with hands-on projects and practical exercises designed by our expert teachers.</dd>
+                <dt>Performant:</dt>
+                <dd>Truly reactive, compiler-optimized rendering system that rarely requires manual optimization.</dd>
 
-                <dt>🚀 Career Ready:</dt>
-                <dd>Get the skills and knowledge you need to succeed in the tech industry.</dd>
+                <dt>Versatile:</dt>
+                <dd>A rich, incrementally adoptable ecosystem that scales between a library and a full-featured framework.</dd>
             </dl>
-
-            <div class="features-list">
-                <h4>Features:</h4>
-                <ul>
-                    <li>✓ Interactive teacher profiles</li>
-                    <li>✓ Dynamic content display</li>
-                    <li>✓ Easy navigation</li>
-                    <li>✓ Responsive design</li>
-                    <li>✓ Modern interface</li>
-                </ul>
-            </div>
         </aside>
 
-        <footer>
-            &copy; <span id="year"></span> Teachers Academy - Vue.js Demo
-        </footer>
+        <footer>&copy; <span id="year"></span> - Vue.js Introduction Demo</footer>
     </div>
 
     <!-- Vue.js CDN -->
@@ -100,40 +73,28 @@
 
     <!-- Vue.js Application Script -->
     <script>
-        // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Vue.js Application
-        const techLearningApp = {
+        const javaPackagesApp = {
             data() {
                 return {
-                    mainHeading: 'Our Expert Teachers',
-                    // Using data from data.js file
-                    techTopics,
-                    // Track if card is flipped
+                    mainHeading: 'Technology Topics and Definitions',
+                    packages,
                     isFlipped: false,
-                    // Current index for navigation
                     index: 0
                 }
             },
             methods: {
-                // Method to navigate through topics
                 move(change) {
-                    // Calculate new index
-                    const newIndex = this.index + change;
-                    
-                    // Check if new index is within bounds
-                    if (newIndex >= 0 && newIndex < this.techTopics.length) {
-                        this.index = newIndex;
-                        // Reset flip state when navigating
+                    if (this.packages[this.index + change]) {
+                        this.index += change;
                         this.isFlipped = false;
                     }
                 }
             }
         };
 
-        // Create and mount the Vue app
-        const app = Vue.createApp(techLearningApp).mount("#app");
+        const app = Vue.createApp(javaPackagesApp).mount("#app");
     </script>
 </body>
 
