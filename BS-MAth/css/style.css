@@ -1,0 +1,633 @@
+/* ======================================
+   TechLearn - Vue.js Learning Platform
+   Modern, Responsive CSS Stylesheet
+   ====================================== */
+
+/* ========== CSS Reset & Base Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f093fb;
+    --success-color: #4facfe;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+    gap: 25px;
+}
+
+/* ========== Header Styles ========== */
+header {
+    grid-area: header;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    animation: fadeInDown 0.6s ease;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header h2 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+/* ========== Navigation Styles ========== */
+.main-nav {
+    grid-area: nav;
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 15px 20px;
+    animation: fadeIn 0.8s ease;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.main-nav li {
+    margin: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.main-nav a:hover {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========== Main Content Styles ========== */
+.main-content {
+    grid-area: main;
+    background: var(--bg-white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    animation: fadeInUp 0.8s ease;
+}
+
+.main-content > h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* ========== Card Styles ========== */
+.card {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-5px);
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.card-image {
+    flex: 0 0 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+    transition: var(--transition);
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-text {
+    flex: 1;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.card p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+/* ========== Button Styles ========== */
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+button {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button span {
+    font-size: 1.3rem;
+}
+
+.btn-prev {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.btn-next {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.counter {
+    background: var(--bg-light);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+/* ========== Info Section ========== */
+.info-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.instruction {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    padding: 20px 30px;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    box-shadow: var(--shadow);
+    display: inline-block;
+}
+
+/* ========== Sidebar Styles ========== */
+.main-sidebar {
+    grid-area: aside;
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    animation: fadeInRight 0.8s ease;
+}
+
+.main-sidebar h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.main-sidebar h4 {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+    margin: 25px 0 15px 0;
+    font-weight: 600;
+}
+
+.main-sidebar dl {
+    margin-bottom: 20px;
+}
+
+.main-sidebar dt {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.main-sidebar dd {
+    margin-left: 0;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.features-list {
+    background: linear-gradient(135deg, #667eea10 0%, #764ba210 100%);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+}
+
+.features-list ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.features-list li {
+    padding: 10px 0;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    border-bottom: 1px solid #e9ecef;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+/* ========== Footer Styles ========== */
+footer {
+    grid-area: footer;
+    background: linear-gradient(135deg, var(--text-dark) 0%, #1a252f 100%);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+/* ========== Animations ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========== Responsive Design - Tablet ========== */
+@media (min-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "aside"
+            "footer";
+    }
+}
+
+/* ========== Responsive Design - Desktop ========== */
+@media (min-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main aside"
+            "footer footer";
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ========== Responsive Design - Mobile ========== */
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    .main-nav ul {
+        gap: 10px;
+    }
+
+    .main-nav a {
+        font-size: 0.95rem;
+        padding: 8px 15px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .main-content > h1 {
+        font-size: 1.8rem;
+    }
+
+    .card {
+        padding: 20px;
+        min-height: 350px;
+    }
+
+    .card-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-image {
+        flex: 0 0 auto;
+    }
+
+    .card-image img {
+        max-height: 180px;
+    }
+
+    .card h2 {
+        font-size: 1.6rem;
+        min-height: 60px;
+        text-align: center;
+    }
+
+    .card p {
+        font-size: 1rem;
+        min-height: 120px;
+    }
+
+    .buttons {
+        gap: 15px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+
+    .counter {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .instruction {
+        font-size: 0.95rem;
+        padding: 15px 20px;
+    }
+
+    .main-sidebar {
+        padding: 20px;
+    }
+
+    .main-sidebar h3 {
+        font-size: 1.5rem;
+    }
+
+    .main-sidebar dt {
+        font-size: 1.1rem;
+    }
+
+    .main-sidebar dd {
+        font-size: 0.95rem;
+    }
+}
+
+/* ========== Extra Small Devices ========== */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header h2 {
+        font-size: 1rem;
+    }
+
+    .main-nav {
+        padding: 10px;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .main-nav a {
+        display: block;
+        text-align: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .counter {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ========== Print Styles ========== */
+@media print {
+    body {
+        background: white;
+    }
+
+    .wrapper {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .main-nav,
+    .buttons,
+    .instruction {
+        display: none;
+    }
+
+    .card {
+        box-shadow: none;
+        break-inside: avoid;
+    }
+}
+
+/* ========== Accessibility ========== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border: 2px solid var(--text-dark);
+    }
+
+    button {
+        border: 2px solid white;
+    }
+}
